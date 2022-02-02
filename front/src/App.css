@@ -1,0 +1,16 @@
+#upper {
+  background-color: aqua;
+}
+
+#lower {
+  background-color: coral;
+}
+
+#knight {
+  font-size: 45px;
+}
+
+#upper, #lower {
+  height: 200px;
+  position: relative;
+}
