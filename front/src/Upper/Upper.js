@@ -1,5 +1,6 @@
 import React, { useState } from "react";
-import Marker from "../Marker";
+// import Marker from "../Marker/Marker";
+import DraggableMarker from "../Marker/DraggableMarker";
 import { useDrop } from "react-dnd";
 import { ItemTypes } from "../items";
 
@@ -40,7 +41,7 @@ const Upper = () => {
     <div id="upper" ref={drop}>
       markers start here
       {markerJson.map((marker, idx) => (
-        <Marker coord={marker} key={idx} />
+        <DraggableMarker coord={marker} key={idx} />
       ))}
     </div>
   );
