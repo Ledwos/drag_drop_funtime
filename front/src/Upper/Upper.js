@@ -1,27 +1,9 @@
-import React, { useState } from "react";
-// import Marker from "../Marker/Marker";
+import React from "react";
 import DraggableMarker from "../Marker/DraggableMarker";
 import { useDrop } from "react-dnd";
 import { ItemTypes } from "../items";
 
-const Upper = () => {
-  const [markerJson, setMarkerJson] = useState([
-    {
-      id: "m1",
-      x: 300,
-      y: 50,
-    },
-    {
-      id: "m2",
-      x: 213,
-      y: 10,
-    },
-    {
-      id: "m3",
-      x: 580,
-      y: 150,
-    },
-  ]);
+const Upper = ({ markerJson, setMarkerJson }) => {
   const [, drop] = useDrop({
     accept: ItemTypes.MARKER,
     drop: (item, monitor) => {
@@ -41,7 +23,7 @@ const Upper = () => {
     <div id="upper" ref={drop}>
       markers start here
       {markerJson.map((marker, idx) => (
-        <DraggableMarker coord={marker} key={idx} />
+        <DraggableMarker coord={marker} key={idx} id={marker.id} />
       ))}
     </div>
   );
